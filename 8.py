@@ -1,0 +1,5 @@
+text = input("Введите ваш текст: ")
+words = text.split()
+words_sorted = sorted(words, key=len)
+result = " ".join(words_sorted)
+print(result)
