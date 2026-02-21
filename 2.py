@@ -6,6 +6,6 @@ for symbol in range(1, len(text)):
         current_repeat += 1
         if current_repeat > max_repeat:
             max_repeat = current_repeat
-        else:
+    else:
             current__repeat = 1
 print(" Максимальное количество повторяющихся символов: " , max_repeat)
