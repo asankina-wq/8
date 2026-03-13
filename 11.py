@@ -1,18 +1,10 @@
 cities = input("Введите города через пробел: ").split()
-winner = None
-for index_city in range(1, len(cities)):
-    current_city = cities[index_city]
-    previous_city = cities[index_city - 1]
-    if current_city[0].lower() != previous_city[-1].lower():
-        if index_city % 2 == 0:
-            winner = "Вася"
-        else:
-            winner = "Петя"
-        break
 
-    if len(cities) % 2 == 0:
-        winner = "Вася"
-    else:
-        winner = "Петя"
+for index, city in enumerate(cities[1:], start=1):
+    if city[0].lower() != cities[index - 1][-1].lower():
+        winner = "Петя" if index % 2 == 0 else "Вася"
+        break
+else:
+    winner = "Вася" if (len(cities) - 1) % 2 == 0 else "Петя"
 
 print("Победитель:", winner)
