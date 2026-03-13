@@ -1,14 +1,12 @@
 import keyword
+
 name = input("Введите имя для проверки: ")
-empty = not name
-digit_start = name[0].isdigit()
-is_keyword = keyword.iskeyword(name)
-if empty or digit_start or is_keyword:
+
+if not name or name[0].isdigit() or keyword.iskeyword(name):
     print("Не может быть именем")
 else:
-    for letter in name:
-        available_letter = letter.isalpha() or letter.isdigit() or letter == '_'
-        if not available_letter:
+    for char in name:
+        if not (char.isalpha() or char.isdigit() or char == "_"):
             print("Не может быть именем")
             break
     else:
