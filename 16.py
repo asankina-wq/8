@@ -1,5 +1,7 @@
 text = input("Введите текст: ")
+
 unclosed_parentheses = 0
+
 for sym in text:
     if sym == "(":
         unclosed_parentheses += 1
@@ -8,6 +10,7 @@ for sym in text:
         if unclosed_parentheses  < 0:
             print("Скобки расставлены неправильно")
             exit()
+            
 if unclosed_parentheses  == 0:
     print("Скобки расставлены правильно")
 else:
